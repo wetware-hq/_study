@@ -82,6 +82,11 @@ def page_errors(page: dict) -> list[str]:
 
 
 def live() -> None:
+    pins = json.loads((ROOT / "data" / "pins.json").read_text())
+    for name in ("supported", "discovery"):
+        pin = next(p for p in pins if f"/{name}" in p["id"] or name in p["id"])
+        body = (ROOT / "data" / f"{name}.json").read_bytes()
+        check(f"pin: data/{name}.json matches its sha256", hashlib.sha256(body).hexdigest() == pin["sha256"])
     sup = json.loads((ROOT / "data" / "supported.json").read_text())
     v2 = [k for k in sup["kinds"] if k["x402Version"] == 2]
     v1 = [k for k in sup["kinds"] if k["x402Version"] == 1]

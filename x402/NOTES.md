@@ -47,7 +47,7 @@ Each row: claim, pinned locus, read status. `claim-checked` = read at the pin or
 | 14 | `payment-identifier` extension: client-supplied `id` used as an idempotency key. | `extensions/payment_identifier.md` | claim-checked |
 | 15 | `offer-and-receipt` extension: server signs the terms it offers and the receipt after delivery, for audit and reputation. | `extensions/extension-offer-and-receipt.md` | claim-checked |
 | 16 | Live `x402.org/facilitator/supported` (testnet): 9 v2 kinds (7 `exact`, 1 `upto`, 1 `batch-settlement`) on 7 chains (EVM, Solana, Algorand, Aptos, Stellar, Hedera, XRPL) and 2 v1 kinds. | `data/supported.json` | claim-checked |
-| 17 | Live CDP discovery: 38,469 listed resources. The 20 sampled items gave 33 valid requirements and 22 `{info, schema}` extensions. | `data/discovery.json` | claim-checked |
+| 17 | Live CDP discovery: 38,754 listed resources. The 20 sampled items gave 33 valid requirements and 22 `{info, schema}` extensions. | `data/discovery.json` | claim-checked |
 | 18 | One live extension (`agentkit`, Sign-In-With-X style) has `info` that **fails its own schema**: `address`, `signature`, `chainId` are missing. The schema describes the object the client completes, not the server's offer. | `data/discovery.json` | claim-checked |
 | 19 | The CAIP-2 regex accepts `uniprot:P00533`, `pdb:1M17`, `hgnc:3236`, `chebi:15377`, `pmid:12748304`, `ensembl:ENSG00000146648`. It rejects `aa:ACD` (namespace < 3 chars), `doi:10.1038/...` (`/` and `.`) and `UniProt:` (uppercase). | `validate.py` | claim-checked |
 
@@ -107,7 +107,7 @@ Clinical utility comes from the claim layer (pin, locus, read status, verifier),
 
 ## 4. Red team (falsifiers in `validate.py`)
 
-Each mutant must be **rejected**. All 8 are rejected at the pin.
+Each mutant must be **rejected**. All 12 are rejected at the pin. A positive control (a contribution that appends a claim and an edge) must be **accepted**.
 
 | Mutant | Caught by |
 |---|---|
@@ -119,10 +119,13 @@ Each mutant must be **rejected**. All 8 are rejected at the pin.
 | `contentHash` drift | body hash |
 | page ID `doi:10.1038/x` | CAIP-2 shape |
 | empty `accepts` | 1..1024 bound |
+| `x402Version` missing, or `1` | wire-level version check (the SDK defaults it to 2) |
+| existing claim deleted | add-only rule (list may only grow) |
+| `claim`/`pin`/`locus`/`verifier` set to `null` | page schema (non-empty strings) |
 
 ## 5. Limits
 
-- Live fixtures drift. Re-run `retrieve.py` and re-pin rather than editing hashes.
+- Live fixtures drift. Re-run `retrieve.py` and re-pin rather than editing hashes. Fixtures are saved as the raw response bytes, so `validate.py` re-checks their sha256 offline.
 - `validate.py` checks shape and binding. It does not verify signatures, call `/verify` or `/settle`, or check on-chain state.
 - v1 kinds are counted separately and never validated as v2.
 - The molecular-biology column is a teaching analogy, not a mechanism claim.

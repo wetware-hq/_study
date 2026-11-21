@@ -38,7 +38,8 @@ def main() -> None:
                      "sha256": hashlib.sha256(body).hexdigest()})
     for name, url in LIVE.items():
         body = get(url)
-        (DATA / f"{name}.json").write_text(json.dumps(json.loads(body), indent=2) + "\n")
+        json.loads(body)
+        (DATA / f"{name}.json").write_bytes(body)  # raw bytes, so sha256 below re-verifies offline
         pins.append({"id": url, "retrieved": now, "sha256": hashlib.sha256(body).hexdigest(),
                      "note": "live fixture; drifts; re-pin instead of repairing"})
     (DATA / "pins.json").write_text(json.dumps(pins, indent=2) + "\n")
