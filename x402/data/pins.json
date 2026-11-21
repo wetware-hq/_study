@@ -1,0 +1,44 @@
+[
+  {
+    "id": "x402-foundation/x402@ad9a38fdd1800641d17fc73a947156471265fef2:specs/x402-specification-v2.md",
+    "retrieved": "2026-11-21T00:27:23+00:00",
+    "sha256": "c0c94b8cc8ed6b95ebc85c893277b6259a8ff92c0545d746c9574a1682ccb1a5"
+  },
+  {
+    "id": "x402-foundation/x402@ad9a38fdd1800641d17fc73a947156471265fef2:specs/transports-v2/http.md",
+    "retrieved": "2026-11-21T00:27:23+00:00",
+    "sha256": "7f8b046916e78ba02b986a6738c63d757613fa45e2746c8382c5b51e3aad506c"
+  },
+  {
+    "id": "x402-foundation/x402@ad9a38fdd1800641d17fc73a947156471265fef2:specs/extensions/payment_identifier.md",
+    "retrieved": "2026-11-21T00:27:23+00:00",
+    "sha256": "a48b79d0c1fc10f82b0939efdabfa363e9367391664bb00bf6fed0beb193d2d3"
+  },
+  {
+    "id": "x402-foundation/x402@ad9a38fdd1800641d17fc73a947156471265fef2:specs/extensions/extension-offer-and-receipt.md",
+    "retrieved": "2026-11-21T00:27:23+00:00",
+    "sha256": "51151bd2b7dd174bc4a44b712234c074e45ca6c752c44ce077a94a4d97596ae9"
+  },
+  {
+    "id": "x402-foundation/x402@ad9a38fdd1800641d17fc73a947156471265fef2:typescript/packages/core/src/schemas/index.ts",
+    "retrieved": "2026-11-21T00:27:23+00:00",
+    "sha256": "69031835b947524ef6acd29b43f6f1f331d2ff4dfb16981d7c4f618d10baf7ed"
+  },
+  {
+    "id": "x402-foundation/x402@ad9a38fdd1800641d17fc73a947156471265fef2:python/x402/schemas/payments.py",
+    "retrieved": "2026-11-21T00:27:23+00:00",
+    "sha256": "8b8dd93589cb06173af061c02808285e3f53457fc8f9ee9b5954a72b8399fe38"
+  },
+  {
+    "id": "https://x402.org/facilitator/supported",
+    "retrieved": "2026-11-21T00:27:23+00:00",
+    "sha256": "057ec90802fad6220d333ad9507f592d32807d4770910f91ef2e4c0f05fa2850",
+    "note": "live fixture; drifts; re-pin instead of repairing"
+  },
+  {
+    "id": "https://api.cdp.coinbase.com/platform/v2/x402/discovery/resources?limit=5",
+    "retrieved": "2026-11-21T00:27:23+00:00",
+    "sha256": "2e16ddb284b52c6b8a90b1dd2fab081a777914b6d144a8549f8d710c51b58d7d",
+    "note": "live fixture; drifts; re-pin instead of repairing"
+  }
+]
