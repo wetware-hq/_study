@@ -53,6 +53,9 @@ def page_errors(page: dict) -> list[str]:
         pay = PaymentPayload.model_validate(contrib)
     except ValidationError as e:
         return [f"sdk: {e.errors()[0]['msg']}"]
+    # SDK models default x402_version to 2 and accept any int; v2 requires the literal 2 on the wire.
+    if offer.get("x402Version") != 2 or contrib.get("x402Version") != 2:
+        errs.append("x402Version must be 2")
     if not 1 <= len(req.accepts) <= 1024:
         errs.append("accepts must hold 1..1024 entries")
     tags = req.resource.tags or []
@@ -142,6 +145,9 @@ def wiki() -> None:
     mutant("unknown read status", lambda m: [ext(m, s)["claims"][0].update(readStatus="trusted") for s in ("offer", "contribution")])
     mutant("content drift", lambda m: [ext(m, s).update(contentHash="sha256:" + "0" * 64) for s in ("offer", "contribution")])
     mutant("page id not namespace:reference", lambda m: [ext(m, s).update(id="doi:10.1038/x") for s in ("offer", "contribution")])
+    mutant("x402Version missing", lambda m: m["offer"].pop("x402Version"))
+    mutant("x402Version 1", lambda m: m["contribution"].update(x402Version=1))
+    mutant("claim deleted", lambda m: ext(m, "contribution")["claims"].clear())
     mutant("empty accepts", lambda m: m["offer"].update(accepts=[]))
 
 
