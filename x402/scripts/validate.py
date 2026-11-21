@@ -147,6 +147,8 @@ def wiki() -> None:
     mutant("page id not namespace:reference", lambda m: [ext(m, s).update(id="doi:10.1038/x") for s in ("offer", "contribution")])
     mutant("x402Version missing", lambda m: m["offer"].pop("x402Version"))
     mutant("x402Version 1", lambda m: m["contribution"].update(x402Version=1))
+    mutant("null claim provenance", lambda m: [ext(m, s)["claims"][0].update(claim=None, pin=None, locus=None, verifier=None)
+                                               for s in ("offer", "contribution")])
     mutant("claim deleted", lambda m: ext(m, "contribution")["claims"].clear())
     mutant("empty accepts", lambda m: m["offer"].update(accepts=[]))
 

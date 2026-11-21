@@ -7,7 +7,11 @@
       "description": "Epidermal growth factor receptor (EGFR_HUMAN)",
       "mimeType": "text/markdown",
       "serviceName": "wetware-wiki",
-      "tags": ["uniprot", "protein", "metadata-only"]
+      "tags": [
+        "uniprot",
+        "protein",
+        "metadata-only"
+      ]
     },
     "accepts": [
       {
@@ -17,7 +21,10 @@
         "asset": "0x036CbD53842c5426634e7929541eC2318f3dCF7e",
         "payTo": "0x0000000000000000000000000000000000000000",
         "maxTimeoutSeconds": 60,
-        "extra": {"name": "USDC", "version": "2"}
+        "extra": {
+          "name": "USDC",
+          "version": "2"
+        }
       }
     ],
     "extensions": {
@@ -34,29 +41,77 @@
               "verifier": "x402/scripts/validate.py"
             }
           ],
-          "edges": [{"type": "encoded_by", "to": "hgnc:3236"}]
+          "edges": [
+            {
+              "type": "encoded_by",
+              "to": "hgnc:3236"
+            }
+          ]
         },
         "schema": {
           "$schema": "https://json-schema.org/draft/2020-12/schema",
           "type": "object",
-          "required": ["id", "contentHash", "claims"],
+          "required": [
+            "id",
+            "contentHash",
+            "claims"
+          ],
           "properties": {
-            "id": {"type": "string"},
-            "contentHash": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+            "id": {
+              "type": "string"
+            },
+            "contentHash": {
+              "type": "string",
+              "pattern": "^sha256:[0-9a-f]{64}$"
+            },
             "claims": {
               "type": "array",
               "minItems": 1,
               "items": {
                 "type": "object",
-                "required": ["claim", "pin", "locus", "readStatus", "verifier"],
+                "required": [
+                  "claim",
+                  "pin",
+                  "locus",
+                  "readStatus",
+                  "verifier"
+                ],
                 "properties": {
-                  "readStatus": {"enum": ["metadata-only", "claim-checked", "second-read"]}
+                  "claim": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "pin": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "locus": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "verifier": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "readStatus": {
+                    "enum": [
+                      "metadata-only",
+                      "claim-checked",
+                      "second-read"
+                    ]
+                  }
                 }
               }
             },
             "edges": {
               "type": "array",
-              "items": {"type": "object", "required": ["type", "to"]}
+              "items": {
+                "type": "object",
+                "required": [
+                  "type",
+                  "to"
+                ]
+              }
             }
           }
         }
@@ -65,7 +120,9 @@
   },
   "contribution": {
     "x402Version": 2,
-    "resource": {"url": "wiki://uniprot:P00533"},
+    "resource": {
+      "url": "wiki://uniprot:P00533"
+    },
     "accepted": {
       "scheme": "exact",
       "network": "eip155:84532",
@@ -73,7 +130,10 @@
       "asset": "0x036CbD53842c5426634e7929541eC2318f3dCF7e",
       "payTo": "0x0000000000000000000000000000000000000000",
       "maxTimeoutSeconds": 60,
-      "extra": {"name": "USDC", "version": "2"}
+      "extra": {
+        "name": "USDC",
+        "version": "2"
+      }
     },
     "payload": {
       "signature": "UNSIGNED-EXAMPLE",
@@ -100,7 +160,12 @@
               "verifier": "x402/scripts/validate.py"
             }
           ],
-          "edges": [{"type": "encoded_by", "to": "hgnc:3236"}],
+          "edges": [
+            {
+              "type": "encoded_by",
+              "to": "hgnc:3236"
+            }
+          ],
           "contributor": "0x0000000000000000000000000000000000000001"
         }
       }
