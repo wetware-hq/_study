@@ -36,10 +36,12 @@ def schema_errors(schema: dict, info: dict) -> list[jsonschema.ValidationError]:
     return list(jsonschema.Draft202012Validator(schema).iter_errors(info))
 
 
-def add_only(server: dict, client: dict) -> bool:
-    """Spec 5.4: client may append to extension info, never delete or overwrite."""
+def add_only(server, client) -> bool:
+    """Spec 5.1.2: client may append to extension info, never delete or overwrite."""
     if isinstance(server, dict):
         return isinstance(client, dict) and all(k in client and add_only(v, client[k]) for k, v in server.items())
+    if isinstance(server, list):
+        return isinstance(client, list) and len(client) >= len(server) and all(map(add_only, server, client))
     return server == client
 
 
@@ -125,6 +127,14 @@ def wiki() -> None:
         check(f"red team rejects: {name}", bool(page_errors(m)))
 
     ext = lambda m, side: m[side]["extensions"]["wetware-page"]["info"]
+
+    def appended(m):
+        ext(m, "contribution")["claims"].append(dict(ext(m, "contribution")["claims"][0], claim="EGFR gene symbol is EGFR"))
+        ext(m, "contribution")["edges"].append({"type": "same_as", "to": "ensembl:ENSG00000146648"})
+    m = copy.deepcopy(page)
+    appended(m)
+    errs = page_errors(m)
+    check("wiki page: appended claim and edge are accepted", not errs, "; ".join(errs))
     mutant("non-CAIP-2 network", lambda m: m["offer"]["accepts"][0].update(network="base-sepolia"))
     mutant("accepted amount altered", lambda m: m["contribution"]["accepted"].update(amount="1"))
     mutant("claim overwritten", lambda m: ext(m, "contribution")["claims"][0].update(claim="EGFR is a kinase-dead receptor"))
