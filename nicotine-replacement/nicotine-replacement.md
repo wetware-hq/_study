@@ -18,7 +18,7 @@ Final recommended prescriptions (WET-122 `FINALIZE`): **Australian, 2 items**. O
 - **Caution:** ischaemic heart disease, heart failure, hypertension, diabetes, psychiatric illness (PI §4.4). If any of the contraindications apply, use varenicline or combination NRT instead. In pregnancy or breastfeeding, varenicline is not recommended either, so use NRT.
 - **Interactions:** not with anti-tuberculosis drugs. Women on hormonal contraception add a barrier method (PI §4.5). Quitting slows CYP1A2 metabolism, so review clozapine, olanzapine and theophylline doses.
 - **Evidence:** in Australia, CO-verified 6-month abstinence was 11.7% on cytisine vs 13.3% on varenicline, with fewer adverse events (noninferiority not shown) ([Courtney 2021](https://doi.org/10.1001/jama.2021.7621)).
-- **Support and review:** Quitline 13 7848. Review 1–2 weeks after the quit date for abstinence, adverse effects, mood and CYP1A2-drug levels.
+- **Support and review:** Quitline 13 7848. Review 1–2 weeks after the quit date for abstinence, adverse effects and mood. Clozapine and olanzapine levels can rise within days of quitting: check a clozapine level before the quit date and again within the first week, and plan any dose reduction with the prescriber in advance.
 
 ### 2. Rosuvastatin: cardioprotection with normal lipids
 
