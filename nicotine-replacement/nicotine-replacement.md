@@ -11,6 +11,35 @@ Final recommended prescriptions (WET-122 `FINALIZE`): **Australian, 2 items**. O
 | 1 | **Cytisine 1.5 mg tablet** (Cyventine), 100 tablets | 25-day course: 1 tablet every 2 h (max 6/day) days 1–3; every 2.5 h (max 5) days 4–12; every 3 h (max 4) days 13–16; every 5 h (max 3) days 17–20; 1–2/day days 21–25. **Stop smoking completely by day 5.** If it fails, stop; may repeat after 2–3 months | ARTG-registered. Schedule 3 (Pharmacist Only), so no script is needed; not PBS-subsidised |
 | 2 | **Rosuvastatin 10 mg tablet** | 1 tablet orally once daily, long term. Start 5 mg if Asian ancestry, severe renal impairment (CrCl <30) or severe hepatic impairment | PBS General Schedule, unrestricted (item 2628H): 30 tablets, 5 repeats |
 
+### Prescription text
+
+```
+Rx 1  Cytisine 1.5 mg film-coated tablet (Cyventine)         [Schedule 3, non-PBS]
+Sig:  Take orally with water as labelled on the blister:
+        Days 1-3    1 tablet every 2 hours   (max 6 tablets/day)
+        Days 4-12   1 tablet every 2.5 hours (max 5 tablets/day)
+        Days 13-16  1 tablet every 3 hours   (max 4 tablets/day)
+        Days 17-20  1 tablet every 5 hours   (max 3 tablets/day)
+        Days 21-25  1-2 tablets daily
+      Stop smoking completely no later than day 5. Do not smoke or use nicotine
+      products during treatment.
+Qty:  100 tablets (1 pack = full 25-day course). Repeats: 0.
+Indication: aid to smoking cessation, adult 18-65.
+```
+
+```
+Rx 2  Rosuvastatin 10 mg tablet                              [PBS 2628H, General Schedule]
+Sig:  Take 1 tablet orally once daily, at the same time each day, with or without food.
+Qty:  30 tablets. Repeats: 5.
+Indication: primary prevention of cardiovascular events (absolute CVD risk >=10% / 5 y,
+            or 5-<10% after shared decision).
+```
+
+```
+Prescriber: [name, address, AHPRA registration no., PBS prescriber no., signature, date]  <- required; not supplied
+Patient:    [name, address, DOB, Medicare no.]
+```
+
 ### 1. Cytisine: stop cigarettes
 
 - **Who:** adults 18–65 who are ready to quit (Cyventine PI §4.1).
