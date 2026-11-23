@@ -30,6 +30,8 @@ Indication: aid to smoking cessation, adult 18-65.
 ```
 Rx 2  Rosuvastatin 10 mg tablet                              [PBS 2628H, General Schedule]
 Sig:  Take 1 tablet orally once daily, at the same time each day, with or without food.
+      Prescribe rosuvastatin 5 mg instead if Asian ancestry, CrCl <30 mL/min,
+      severe hepatic impairment or taking ciclosporin.
 Qty:  30 tablets. Repeats: 5.
 Indication: primary prevention of cardiovascular events (absolute CVD risk >=10% / 5 y,
             or 5-<10% after shared decision).
