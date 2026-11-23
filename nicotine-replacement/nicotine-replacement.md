@@ -35,4 +35,4 @@ Final recommended prescriptions (WET-122 `FINALIZE`): **Australian, 2 items**. O
 1. Measure BP, lipids, HbA1c or fasting glucose, eGFR and LFTs, then calculate 5-year CVD risk. If it is <5%, item 2 is not indicated; quitting alone is the cardioprotection. Treat hypertension or diabetes if found.
 2. If the patient has known ASCVD, this list does not apply: they need secondary-prevention therapy, and cytisine is contraindicated after recent MI or stroke.
 3. Start both items at the same visit. Statins and cytisine have no listed interaction.
-4. If rosuvastatin is unsuitable, atorvastatin is the PBS alternative.
+4. If rosuvastatin is not tolerated, atorvastatin is the PBS alternative. Active liver disease, pregnancy, breastfeeding and fusidic acid rule out every statin, atorvastatin included.
