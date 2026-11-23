@@ -22,7 +22,8 @@ Sig:  Take orally with water as labelled on the blister:
         Days 17-20  1 tablet every 5 hours   (max 3 tablets/day)
         Days 21-25  1-2 tablets daily
       Stop smoking completely no later than day 5. Do not smoke or use nicotine
-      products during treatment.
+      products during treatment. If still smoking on day 5, stop cytisine; a new
+      course may be started after 2-3 months.
 Qty:  100 tablets (1 pack = full 25-day course). Repeats: 0.
 Indication: aid to smoking cessation, adult 18-65.
 ```
